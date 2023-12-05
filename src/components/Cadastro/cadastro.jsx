@@ -14,17 +14,17 @@ function Cadastro (){  // FUNÇÃO DE CADASTRO
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
 
-  const buscar = ()=>{  //  BUSCAR USUARIOS CADASTRADOS
-    axios.get('http://127.0.0.1:8000/cadastro/' + nome)
-      .then((res)=>{
-        setNome(res.data.nome)
-      }).catch((erro)=>{
-        alert(erro.response.data.detail)
-      })
-  }
+  // const buscar = ()=>{  //  BUSCAR USUARIOS CADASTRADOS
+  //   axios.get('http://127.0.0.1:8000/cadastro/' + nome)
+  //     .then((res)=>{
+  //       setNome(res.data.nome)
+  //     }).catch((erro)=>{
+  //       alert(erro.response.data.detail)
+  //     })
+  // }
 
   const adicionar = ()=>{ // CADASTRAR NOVO USUARIO
-    axios.post('http://127.0.0.1:8000/cadastro/', 
+    axios.post('http://127.0.0.1:8000/api_cadastro/', 
     {
       nome: nome,
       nasc: nasc,
