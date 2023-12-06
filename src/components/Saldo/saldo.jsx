@@ -7,7 +7,7 @@ const Saldo = () => {
   useEffect(() => {
     const fetchContas = async () => {
       try {
-        const response = await axios.get(' http://127.0.0.1:8000/api_contas/');
+        const response = await axios.get('http://127.0.0.1:8000/api_cliente/');
         setContas(response.data);
       } catch (error) {
         console.error('Erro ao buscar contas:', error);
