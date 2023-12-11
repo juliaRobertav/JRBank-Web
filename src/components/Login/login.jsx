@@ -10,15 +10,18 @@ const Login = () => {
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
 
-  const buscar = ()=>{  //  BUSCAR USUARIOS CADASTRADOS
-    axios.get('http://127.0.0.1:8000/api_login/' + email, senha)
-      .then((res)=>{
-        setEmail(res.data.email)
-        setSenha(res.data.senha)
-      }).catch((erro)=>{
-        alert(erro.response.data.detail)
+  const buscar = () => {
+    axios.get('http://127.0.0.1:8000/api_login/', { params: { email, senha } })
+      .then((res) => {
+        setUserId(res.data.userId);
+        setEmail(res.data.email);
+        setSenha(res.data.senha);
       })
-  }
+      .catch((erro) => {
+        alert(erro.response.data.detail);
+      });
+  };
+  
 
     return (
 

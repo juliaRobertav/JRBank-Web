@@ -5,28 +5,29 @@ const Saldo = () => {
   const [contas, setContas] = useState([]);
 
   useEffect(() => {
-    const fetchContas = async () => {
-      try {
-        const response = await axios.get('http://127.0.0.1:8000/api_cliente/');
+    axios.get('http://127.0.0.1:8000/api_cliente/')
+      .then(response => {
         setContas(response.data);
-      } catch (error) {
-        console.error('Erro ao buscar contas:', error);
-      }
-    };
-
-    fetchContas();
+      })
+      .catch(error => {
+        console.error('Erro ao obter saldo:', error);
+      });
   }, []);
 
   return (
     <div>
       <h1>Saldo das Contas</h1>
-      <ul>
-        {contas.map((cliente) => (
-          <li key={cliente.id}>
-            {`${cliente.agencia}/${cliente.conta}: ${cliente.saldo}`}
-          </li>
-        ))}
-      </ul>
+      {contas.length > 0 ? (
+        <ul>
+          {contas.map(conta => (
+            <li key={conta.id}>
+              Nome do Cliente: {conta.cliente} | Saldo Atual: R$ {conta.saldo.toFixed(2)}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>Carregando...</p>
+      )}
     </div>
   );
 };
