@@ -23,6 +23,7 @@ function Cadastro (){  // FUNÇÃO DE CADASTRO
   //     })
   // }
 
+  // cadastrar usuario com base no consumo da API
   const adicionar = ()=>{ // CADASTRAR NOVO USUARIO
     axios.post('http://127.0.0.1:8000/api_cadastro/', 
     {

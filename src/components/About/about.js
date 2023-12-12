@@ -2,6 +2,9 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 const AboutUs = () => {
+
+  /* estilização dos componentes 
+  No styled Components, é feita a estilização além de ser definido o tipo (body por exemplo)*/
   const About = styled.div`
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), #800040);
     padding: 20px;
@@ -45,6 +48,7 @@ const AboutUs = () => {
     large: '1024px',
   };
 
+  // const para responsividade
   const media = Object.keys(breakpoints).reduce((acc, label) => {
     acc[label] = (...args) => css`
       @media (max-width: ${breakpoints[label]}) {
@@ -62,6 +66,7 @@ const AboutUs = () => {
   `;
 
   return (
+    // componentes baseados nos styleds components
     <ResponsiveAbout>
       <Column>
         <Title>Nossa Missão</Title>

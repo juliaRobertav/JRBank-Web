@@ -1,6 +1,8 @@
 import React from 'react';
 
 const Service = () => {
+
+  // styled components
   const backgroundStyle = {
     background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.7), #800040)',
     backgroundSize: 'cover',
@@ -47,6 +49,7 @@ const Service = () => {
     large: '1024px',
   };
 
+  // feito para responsividade
   const media = Object.keys(breakpoints).reduce((acc, label) => {
     acc[label] = `@media (max-width: ${breakpoints[label]})`;
     return acc;

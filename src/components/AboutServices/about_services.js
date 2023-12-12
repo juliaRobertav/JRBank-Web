@@ -1,6 +1,8 @@
 import styled, { css } from "styled-components";
 
 const AboutService = () => {
+      /* estilização dos componentes 
+  No styled Components, é feita a estilização além de ser definido o tipo (body por exemplo)*/
     const ServicePage = styled.div`
         background: linear-gradient(to top, rgba(0, 0, 0, 0.7), #800040);
         display: flex;
@@ -49,6 +51,7 @@ const AboutService = () => {
         large: "1024px",
     };
 
+  // const para responsividade
     const media = Object.keys(breakpoints).reduce((acc, label) => {
         acc[label] = (...args) => css`
             @media (max-width: ${breakpoints[label]}) {
@@ -65,6 +68,7 @@ const AboutService = () => {
     `;
 
     return (
+          // componentes baseados nos styleds components
         <ServicePage>
             <ResponsiveTextDiv>
                 <Title>Nossos Serviços</Title>

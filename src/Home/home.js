@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// styled componentes
+// const de estilização para responsividade
 const ResponsiveContainer = styled.div`
   margin: 0;
   padding: 0;
@@ -48,6 +50,7 @@ const Image = styled.img`
 
 const Home = () => {
   return (
+    // conteiners
     <ResponsiveContainer>
       <Title>J&R Trust Bank</Title>
       <Frase>“Construindo confiança, gerando sucesso!”</Frase>

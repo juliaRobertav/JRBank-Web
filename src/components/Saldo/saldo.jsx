@@ -1,13 +1,14 @@
+// Saldo.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const Saldo = () => {
-  const [contas, setContas] = useState([]);
+  const [saldo, setSaldo] = useState(0);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api_cliente/')
+    axios.get('http://127.0.0.1:8000/api_cliente/') 
       .then(response => {
-        setContas(response.data);
+        setSaldo(response.data.saldo);
       })
       .catch(error => {
         console.error('Erro ao obter saldo:', error);
@@ -15,19 +16,9 @@ const Saldo = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Saldo das Contas</h1>
-      {contas.length > 0 ? (
-        <ul>
-          {contas.map(conta => (
-            <li key={conta.id}>
-              Nome do Cliente: {conta.cliente} | Saldo Atual: R$ {conta.saldo.toFixed(2)}
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>Carregando...</p>
-      )}
+    <div style={{ backgroundColor: 'pink', padding: '20px', borderRadius: '10px', maxWidth: '300px', margin: 'auto', marginTop: '50px' }}>
+      <h1 style={{ color: 'white' }}>Saldo Atual</h1>
+      <p style={{ color: 'white', fontSize: '24px' }}>R$ {saldo.toFixed(2)}</p>
     </div>
   );
 };

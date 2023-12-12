@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Cadastro from '../Cadastro/cadastro';
 
+/* estilização dos componentes 
+  No styled Components, é feita a estilização além de ser definido o tipo (body por exemplo)*/
 const HeaderContainer = styled.header`
   background-color: #800040;
   color: white;
@@ -78,6 +80,7 @@ const LoginButton = styled.button`
   }
 `;
 
+// menu hamburguer para responsividade
 const HamburgerIcon = styled.div`
   display: none;
 
@@ -95,6 +98,7 @@ const Header = () => {
   };
 
   return (
+    //Componentes
     <HeaderContainer>
       <div>
         <HamburgerIcon onClick={toggleMenu}>

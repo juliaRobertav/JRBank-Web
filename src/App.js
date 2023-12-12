@@ -15,9 +15,9 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
-        {/* <Cadastro /> */}
+        <Header /> {/* Header é fixo*/}
         <Routes>
+          {/* Rotas para outras paginas*/}
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/clientes" element={<Clientes />} />
